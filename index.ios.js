@@ -8,6 +8,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry
 } from 'react-native';
-import plume2RNstarter from './build/app/smile'
+import plume2RNstarter from './build/app'
 
 AppRegistry.registerComponent('plume2RNstarter', () => plume2RNstarter);

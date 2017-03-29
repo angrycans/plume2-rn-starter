@@ -9,6 +9,10 @@
 
 4.npm run ios        查看demo app 演示
 
+5.ios Simulator  Command⌘ + D select Debug JS Remotely   开启debug 模式
+
+6.ios Simulator  Command⌘ + R reload JS
+
 
 ```
 
@@ -29,19 +33,20 @@ plume2-rn-starter demo  项目依赖RE
 项目目录
 ├── index.android.js
 ├── index.ios.js
-├── app
-├──├── hello
-│  │   ├── actor
-│  │   │   ├── counter-actor.ts
-│  │   │   └── hello-actor.ts
-│  │   ├── component
-│  │   │   ├── colors.css
-│  │   │   ├── text.css
-│  │   │   └── text.tsx
-│  │   ├── index.tsx
-│  │   ├── store.ts
-│  └── └── webapi.ts
-└── dist
+├──├── app
+├──│  ├── hello
+├──│  │   ├── actor
+├──│  │   │   ├── counter-actor.ts
+├──│  │   │   └── hello-actor.ts
+├──│  │   ├── component
+├──│  │   │   ├── colors.css
+├──│  │   │   ├── text.css
+├──│  │   │   └── text.tsx
+├──│  │   ├── index.tsx
+├──│  │   ├── store.ts
+├──│  └── └── webapi.ts
+├──└──└── uikit
+└── build
 ├── node_modules
 ├── package.json
 ├── tsconfig.json
