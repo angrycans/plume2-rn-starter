@@ -1,0 +1,3 @@
+rootProject.name = 'plume2RNstarter'
+
+include ':app'

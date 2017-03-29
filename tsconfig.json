@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "jsx": "react-native",
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "baseUrl": "./src",
+        "rootDir": "./src",
+        "outDir": "build"
+    },
+    "exclude": [
+        "js",
+        "android",
+        "ios",
+        "node_modules",
+        "react-dom",
+        "index.android.js",
+        "index.ios.js"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+	"name": "plume2RNstarter",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest",
+		"watch": "./node_modules/.bin/tsc -w",
+		"compile": "./node_modules/.bin/tsc",
+		"android": "adb reverse tcp:8081 tcp:8081 && node node_modules/react-native/local-cli/cli.js run-android",
+		"ios": "node node_modules/react-native/local-cli/cli.js run-ios --simulator \"iPad Air 2\" &&./node_modules/.bin/tsc -w"
+	},
+	"dependencies": {
+		"antd-mobile": "^1.0.7",
+		"plume2": "^0.1.1",
+		"react": "~15.4.1",
+		"react-dom": "^15.4.2",
+		"react-native": "0.42.3",
+		"typescript": "^2.2.2"
+	},
+	"devDependencies": {
+		"@types/react": "^15.0.20",
+		"@types/react-native": "0.42.0",
+		"babel-jest": "19.0.0",
+		"babel-plugin-import": "^1.1.1",
+		"babel-preset-react-native": "1.9.1",
+		"jest": "19.0.2",
+		"react-test-renderer": "~15.4.1"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
