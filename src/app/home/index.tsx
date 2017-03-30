@@ -15,12 +15,19 @@ export default class Home extends React.Component<any, any> {
   render() {
     console.log("handleClick", this.props);
     return (
-      <View>
-        <View style={styles.ViewStyle}>
+      <View >
+        <View >
           <Text style={styles.textStyle}>header</Text>
         </View>
 
-        {RouteWithSubRoutes(this.props.routes)}
+        <View style={{ flex: 1, flexDirection: "column" }}>
+          <View >
+            <Text style={styles.textStyle}>left</Text>
+          </View>
+          <View >
+            <Text style={styles.textStyle}>right</Text>
+          </View>
+        </View>
       </View>
     )
   }

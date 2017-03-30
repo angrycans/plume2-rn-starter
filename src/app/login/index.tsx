@@ -1,20 +1,22 @@
 import * as React from 'react'
 import { StyleSheet, Text, View, ViewStyle } from 'react-native'
-import {Button} from 'antd-mobile'
+import { Button } from 'antd-mobile'
+import { Link } from 'react-router-native'
 
 export default class Login extends React.Component<any, any> {
 
-  handleClick=()=>{
+  handleClick = () => {
     console.log("handleClick");
+
   }
 
   render() {
     return (
       <View>
-      <Text style={styles.header}>
-        Login view
-      </Text>
-      <Button type="primary" size="small" onClick={this.handleClick}>login</Button>
+        <Text style={styles.header}>
+          hello plume2-rn-starter
+        </Text>
+        <Link to="/home/smile" ><Text>login</Text></Link>
       </View>
     )
   }
@@ -23,6 +25,5 @@ export default class Login extends React.Component<any, any> {
 const styles = StyleSheet.create({
   header: {
     fontSize: 20,
-  },
-
+  }
 })
