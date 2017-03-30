@@ -7,12 +7,11 @@ import Login from './login'
 import Home from './home'
 import Smile from './smile'
 
-
 ////////////////////////////////////////////////////////////
 // then our route config
 const routes = [
   { path: '/', exact: true, component: Login },
-  { path: '/login', component: Login },
+  { path: '/smile', component: Smile },
   {
     path: '/home', component: Home,
     routes: [
@@ -24,7 +23,7 @@ const routes = [
 
 const AppRouter = () => (
   <NativeRouter>
-    <View>
+    <View style={{ flex: 1 }}>
       {RouteWithSubRoutes(routes)}
     </View>
   </NativeRouter>

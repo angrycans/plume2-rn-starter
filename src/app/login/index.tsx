@@ -16,7 +16,7 @@ export default class Login extends React.Component<any, any> {
         <Text style={styles.header}>
           hello plume2-rn-starter
         </Text>
-        <Link to="/home/smile" ><Text>login</Text></Link>
+        <Link to="/smile" ><Text>smile</Text></Link>
       </View>
     )
   }

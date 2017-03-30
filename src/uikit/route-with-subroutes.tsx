@@ -35,6 +35,6 @@ export default function routeWithSubRoutes(routes: Array<IRoute>) {
           render={(props) => <route.component {...props} routes={route.routes} />}
         />
       )
-    } 
+    }
   })
 }
