@@ -1,111 +1,33 @@
-import * as React from 'react'
-import { StyleSheet, Text, View ,ViewStyle} from 'react-native'
+import React from 'react'
+import { StyleSheet, Text, AppRegistry, View, ViewStyle } from 'react-native'
 import { NativeRouter, Route, Link } from 'react-router-native'
+import { RouteWithSubRoutes } from 'uikit'
 
-const Home = () => (
-  <Text style={styles.header}>
-    Home
-  </Text>
-)
+import Login from './login'
+import Home from './home'
+import Smile from './smile'
 
-const About = () => (
-  <Text style={styles.header}>
-    About
-  </Text>
-)
 
-const Topic = ({ match }) => (
-  <Text style={styles.topic}>
-    {match.params.topicId}
-  </Text>
-)
+////////////////////////////////////////////////////////////
+// then our route config
+const routes = [
+  { path: '/', exact: true, component: Login },
+  { path: '/login', component: Login },
+  {
+    path: '/Home', component: Home,
+    routes: [
+      { path: '/smile', component: Smile },
+    ]
+  },
+  { path: '/setting', component: Home },
+]
 
-const Topics = ({ match }) => (
-  <View>
-    <Text style={styles.header}>Topics</Text>
-    <View>
-      <Link
-        to={`${match.url}/rendering`}
-        style={styles.subNavItem}
-        underlayColor='#f0f4f7'>
-          <Text>Rendering with React</Text>
-      </Link>
-      <Link
-        to={`${match.url}/components`}
-        style={styles.subNavItem}
-        underlayColor='#f0f4f7'>
-          <Text>Components</Text>
-      </Link>
-      <Link
-        to={`${match.url}/props-v-state`}
-        style={styles.subNavItem}
-        underlayColor='#f0f4f7'>
-          <Text>Props v. State</Text>
-      </Link>
-    </View>
-
-    <Route path={`${match.url}/:topicId`} component={Topic}/>
-    <Route exact path={match.url} render={() => (
-      <Text style={styles.topic}>Please select a topic.</Text>
-    )} />
-  </View>
-)
-
-const App = () => (
+const AppRouter = () => (
   <NativeRouter>
-    <View style={styles.container}>
-      <View style={styles.nav}>
-        <Link
-          to="/"
-          underlayColor='#f0f4f7'
-          style={styles.navItem}>
-            <Text>Home</Text>
-        </Link>
-        <Link
-          to="/about"
-          underlayColor='#f0f4f7'
-          style={styles.navItem}>
-            <Text>About</Text>
-        </Link>
-        <Link
-          to="/topics"
-          underlayColor='#f0f4f7'
-          style={styles.navItem} >
-            <Text>Topics</Text>
-        </Link>
-      </View>
-
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+    <View>
+      {RouteWithSubRoutes(routes)}
     </View>
   </NativeRouter>
 )
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 25,
-    padding: 10,
-  },
-  header: {
-    fontSize: 20,
-  },
-  nav: {
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  } as ViewStyle,
-  navItem: {
-    flex: 1,
-    alignItems: 'center',
-    padding: 10,
-  },
-  subNavItem: {
-    padding: 5,
-  },
-  topic: {
-    textAlign: 'center',
-    fontSize: 15,
-  } as ViewStyle
-})
-
-export default App
+export default AppRouter
