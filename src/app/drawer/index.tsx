@@ -17,7 +17,7 @@ export default class NavigationDrawer extends React.Component<any, any> {
         type="displace"
         content={<SideMenu />}
         tapToClose={true}
-        openDrawerOffset={0.5}
+        openDrawerOffset={0.7}
         panCloseMask={0.2}
         negotiatePan={true}
         tweenHandler={(ratio) => ({

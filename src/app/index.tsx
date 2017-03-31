@@ -13,6 +13,7 @@ import Login from './login'
 import Home from './home'
 import setting from './setting'
 import Smile from './smile'
+import ShowError from './error'
 
 const getSceneStyle = (/* NavigationSceneRendererProps */ props, computedProps) => {
   const style = {
@@ -30,8 +31,9 @@ const getSceneStyle = (/* NavigationSceneRendererProps */ props, computedProps) 
   return style;
 };
 
+
 const AppRouter = () => (
-  <Router getSceneStyle={getSceneStyle}>
+  <Router >
     <Scene key="modal" component={Modal} >
       <Scene key="root" >
         <Scene key="login" component={Login} hideNavBar title="login" initial />
@@ -44,10 +46,16 @@ const AppRouter = () => (
               type={ActionConst.REPLACE}
               title="home"
               leftTitle="drawer" onLeft={() => Actions.refresh({ key: 'drawer', open: value => !value })}
-
               navigationBarStyle={{ backgroundColor: 'red' }}
               renderRightButton={() => <Text>Right</Text>}
               initial
+            />
+            <Scene key="smile"
+              component={Smile}
+              type={ActionConst.REPLACE}
+              title="smile"
+              leftTitle="drawer" onLeft={() => Actions.refresh({ key: 'drawer', open: value => !value })}
+              renderRightButton={() => <Text>Right</Text>}
             />
             <Scene key="setting"
               component={setting}
@@ -61,19 +69,9 @@ const AppRouter = () => (
         </Scene>
       </Scene>
 
-      <Scene key="error" component={Error} />
+      <Scene key="error" component={ShowError} />
     </Scene>
   </Router >
 )
 
-
-const styles = ({
-  container: {
-    flex: 1, backgroundColor: 'transparent', justifyContent: 'center',
-    alignItems: 'center',
-  } as ViewStyle,
-  tabBarStyle: {
-    backgroundColor: '#eee',
-  } as ViewStyle,
-});
 export default AppRouter
