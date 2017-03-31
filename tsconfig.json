@@ -10,7 +10,10 @@
         "moduleResolution": "node",
         "baseUrl": "./src",
         "rootDir": "./src",
-        "outDir": "build"
+        "outDir": "build",
+        "importHelpers": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     },
     "exclude": [
         "js",

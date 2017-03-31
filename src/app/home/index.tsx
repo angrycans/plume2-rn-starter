@@ -1,12 +1,8 @@
 import * as React from 'react'
-import { StyleSheet, Text, View, ViewStyle, TextStyle } from 'react-native'
-import { Button, NavBar, Icon } from 'antd-mobile'
-import { RouteWithSubRoutes, IRoute } from 'uikit'
+import { Text, View, ViewStyle, TextStyle } from 'react-native'
+import { Button } from 'antd-mobile'
 
 export default class Home extends React.Component<any, any> {
-  props: {
-    routes: Array<IRoute>
-  }
 
   handleClick = () => {
     console.log("handleClick", this.props);
@@ -17,12 +13,9 @@ export default class Home extends React.Component<any, any> {
     return (
       <View style={{ flex: 1 }}>
         <View style={{ flex: 1 }}>
-          <Text style={styles.textStyle}>header</Text>
+          <Text style={styles.textStyle}>home header </Text>
         </View>
 
-        <View style={{ flex: 1 }}>
-          {RouteWithSubRoutes(this.props.routes)}
-        </View>
       </View>
     )
   }
