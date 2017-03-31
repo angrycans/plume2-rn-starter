@@ -12,7 +12,7 @@ export default class Setting extends React.Component<any, any> {
   render() {
 
     return (
-      <View>
+      <View style={styles.header}>
 
         <Text >my setting</Text>
 
@@ -21,4 +21,9 @@ export default class Setting extends React.Component<any, any> {
   }
 }
 
+const styles = StyleSheet.create({
+  header: {
+    marginTop: 100
+  } as ViewStyle
+})
 

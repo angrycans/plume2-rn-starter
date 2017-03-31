@@ -15,7 +15,7 @@ export default class NavigationDrawer extends React.Component<any, any> {
         onOpen={() => Actions.refresh({ key: state.key, open: true })}
         onClose={() => Actions.refresh({ key: state.key, open: false })}
         type="displace"
-        content={<SideMenu />}
+        content={<SideMenu drawer={this.refs.navigation} />}
         tapToClose={true}
         openDrawerOffset={0.7}
         panCloseMask={0.2}
